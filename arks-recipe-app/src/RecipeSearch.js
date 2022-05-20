@@ -33,12 +33,14 @@ const RecipeSearch = () => {
       <h1>ARKS Recipe App</h1>
       <form>
         <input
+
           className={styles.searchbar}
           type="text"
           placholder="What do you fancy"
           onChange={onChange}
         ></input>
         <button className={styles.searchButton} type="submit" onClick={onClick}>
+
           Search
         </button>
       </form>
