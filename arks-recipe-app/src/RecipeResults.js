@@ -1,11 +1,17 @@
 import React from "react";
+import styles from "./reciperesults.module.css";
 
-const RecipeResults = () => {
+const RecipeResults = ({ ingredients, image, label, text, url }) => {
   return (
-    <div>
-      <h1>Recipe name</h1>
-      <h3>Ingredients</h3>
-      <img src="img url" alt="recipeimage"></img>
+    <div className={styles.recipeGrid}>
+      <div className={styles.recipeCard}>
+        <h1 className={styles.title}>{label}</h1>
+        <p className={styles.ingredients}>{ingredients}</p>
+        <img className={styles.image} src={image} alt="recipeimage"></img>
+        <a href={url} target="_blank">
+          {text}
+        </a>
+      </div>
     </div>
   );
 };
