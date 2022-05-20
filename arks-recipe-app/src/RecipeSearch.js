@@ -1,6 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import RecipeResults from "./RecipeResults";
 
 const RecipeSearch = () => {
+  const [recipe, setRecipe] = useState([]);
   const APP_ID = "d0a53431";
   const APP_KEY = "cbe355ceef76e5412fc005a5dc25e442";
   const APP_URL = `https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`;
@@ -9,6 +11,7 @@ const RecipeSearch = () => {
     const response = await fetch(APP_URL);
     const data = await response.json();
     console.log(data);
+    setRecipe(data.hits);
   }
   useEffect(() => {
     getRecipe();
@@ -16,11 +19,18 @@ const RecipeSearch = () => {
 
   return (
     <div>
-      <h1>This is search component</h1>
       <form>
         <input type="text" placholder="What do you fancy"></input>
         <button className="search-button">Search</button>
       </form>
+      {recipe.map((item) => (
+        <RecipeResults
+          key={item.recipe.url}
+          label={item.recipe.label}
+          ingredients={item.recipe.ingredientLines}
+          image={item.recipe.image}
+        />
+      ))}
     </div>
   );
 };
