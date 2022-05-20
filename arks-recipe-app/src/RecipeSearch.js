@@ -19,7 +19,7 @@ const RecipeSearch = () => {
       <h1>This is search component</h1>
       <form>
         <input type="text" placholder="What do you fancy"></input>
-        <button className="search-button">Search</button>
+        <button className="search-button" data-testid="btn">Search</button>
       </form>
     </div>
   );
