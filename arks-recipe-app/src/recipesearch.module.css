@@ -1,0 +1,23 @@
+.wrapper{
+    display: flex;
+    flex-flow:row wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.searchbar{
+    width: 300px;
+    height: 20px;
+    border-radius: 10px;
+    margin-right: 3px;
+}
+
+.searchButton{
+    color:black;
+    background-color: rgb(144, 239, 195);
+    border-radius: 10px;
+    padding: 5px
+
+}

@@ -4,7 +4,7 @@ import RecipeSearch from "./RecipeSearch";
 function App() {
   return (
     <div className="App">
-      <h1>Food Finder</h1>
+      {/* <h1>Food Finder</h1> */}
       <RecipeSearch />
     </div>
   );
