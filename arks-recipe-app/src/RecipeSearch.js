@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import RecipeResults from "./RecipeResults";
+import styles from "./recipesearch.module.css";
 
 const RecipeSearch = () => {
   const [recipe, setRecipe] = useState([]);
@@ -29,26 +30,30 @@ const RecipeSearch = () => {
   }
   return (
     <div>
+      <h1>ARKS Recipe App</h1>
       <form>
         <input
+          className={styles.searchbar}
           type="text"
           placholder="What do you fancy"
           onChange={onChange}
         ></input>
-        <button className="search-button" type="submit" onClick={onClick}>
+        <button className={styles.searchButton} type="submit" onClick={onClick}>
           Search
         </button>
       </form>
-      {recipe.map((item, index) => (
-        <RecipeResults
-          key={index}
-          label={item.recipe.label}
-          ingredients={item.recipe.ingredientLines}
-          image={item.recipe.image}
-          text="Click here to see the full recipe"
-          url={item.recipe.url}
-        />
-      ))}
+      <div className={styles.wrapper}>
+        {recipe.map((item, index) => (
+          <RecipeResults
+            key={index}
+            label={item.recipe.label}
+            ingredients={item.recipe.ingredientLines}
+            image={item.recipe.image}
+            text="Click here to see the full recipe"
+            url={item.recipe.url}
+          />
+        ))}
+      </div>
     </div>
   );
 };
