@@ -6,7 +6,7 @@ const RecipeResults = ({ ingredients, image, label, text, url }) => {
     <div className={styles.recipeGrid}>
       <div className={styles.recipeCard}>
         <h1 className={styles.title}>{label}</h1>
-        <a href={url} target="_blank">
+        <a href={url} target="_blank" rel="noreferrer">
           {text}
         </a>
         <ul className={styles.ingredients}>
