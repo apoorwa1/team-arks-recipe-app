@@ -6,11 +6,15 @@ const RecipeResults = ({ ingredients, image, label, text, url }) => {
     <div className={styles.recipeGrid}>
       <div className={styles.recipeCard}>
         <h1 className={styles.title}>{label}</h1>
-        <p className={styles.ingredients}>{ingredients}</p>
-        <img className={styles.image} src={image} alt="recipeimage"></img>
         <a href={url} target="_blank">
           {text}
         </a>
+        <ul className={styles.ingredients}>
+          {ingredients.map((ingredient) => (
+            <li key={ingredient.text}>{ingredient.text}</li>
+          ))}
+        </ul>
+        <img className={styles.image} src={image} alt="recipeimage"></img>
       </div>
     </div>
   );

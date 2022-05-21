@@ -1,29 +1,50 @@
 .recipeGrid{
     width : 500px;
     padding: 3px;
+  
     
 
 }
 .recipeCard{
-display: flex;
+/* display: flex;
 flex-direction: column;
+
 align-items: center;
-justify-content: center;
-border: 1px solid orange;
+justify-content: space-around;
+border: 1px solid black;
 padding-bottom: 15px;
+flex-wrap: wrap; */
+
+border-radius: 10px;
+    box-shadow: 0px 5px 20px rgb(63, 60, 60);
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-image: linear-gradient(to right,
+            #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%,
+            #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%);
+    align-items: center;
+    min-width: 30%;
+    min-height: 40%;
+    padding-bottom: 5px;
 
 }
 
 .ingredients{
-    min-height: 100px;
+    min-height: 2vw;
+    
 }
 
 .title{
     min-height: 75px;
-}
+    
+    justify-content: center;
+    text-align: center;
+} 
 
 .image{
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
 
 }
